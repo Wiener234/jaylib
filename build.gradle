@@ -1,0 +1,26 @@
+plugins{
+    id 'java'
+    id 'application'
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'uk.co.electronstudio.jaylib:jaylib:4.2.+'
+}
+
+application{
+    mainClass.set('de.wiener.main')
+}
+
+ 
+jar{
+    archivesBaseName = 'jaylib'
+    archiveVersion = '1.0-SNAPSHOT'
+    manifest{
+        attributes 'mainClass' : 'de.wiener.main'
+    }
+}
