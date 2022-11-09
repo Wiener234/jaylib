@@ -21,6 +21,9 @@ jar{
     archivesBaseName = 'jaylib'
     archiveVersion = '1.0-SNAPSHOT'
     manifest{
-        attributes 'mainClass' : 'de.wiener.main'
+        attributes 'Main-Class' : 'de.wiener.main'
+    }
+    from{ 
+        configurations.runtimeClasspath.collect {it.isDirectory() ? it : zipTree(it)}
     }
 }
